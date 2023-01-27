@@ -1,0 +1,7 @@
+.idea
+.gradle
+build
+*.iml
+target
+.ipynb_checkpoints
+*.ipynb
