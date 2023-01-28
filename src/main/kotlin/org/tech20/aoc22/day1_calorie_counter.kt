@@ -1,4 +1,4 @@
-package org.tech20
+package org.tech20.aoc22
 
 import java.io.File
 

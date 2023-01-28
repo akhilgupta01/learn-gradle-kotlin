@@ -1,4 +1,4 @@
-package org.tech20
+package org.tech20.challenges
 
 import com.typesafe.config.Config
 import com.typesafe.config.ConfigBeanFactory
@@ -12,7 +12,7 @@ fun main() {
 
 class AppConfig(private val config: Config){
     private val persistenceConfig = config.getConfig("persistenceConfig")
-    fun persistenceConfig(entityName: String): PersistenceConfig{
+    fun persistenceConfig(entityName: String): PersistenceConfig {
         val pConfig = persistenceConfig.getConfig(entityName)
         return when(pConfig.getString("type")){
             "BQ" -> ConfigBeanFactory.create(pConfig.getConfig("bqConfig"), BqConfig::class.java)
@@ -26,7 +26,7 @@ open class PersistenceConfig
 class BqConfig(
     var dataset: String = "app-dataset",
     var tableName: String = "default-table"
-):PersistenceConfig() {
+): PersistenceConfig() {
     override fun toString(): String {
         return "BqConfig(dataset='$dataset', tableName='$tableName')"
     }
@@ -35,7 +35,7 @@ class BqConfig(
 class GcsConfig(
     var bucket: String = "bucket1",
     var fileName: String = "file.csv"
-):PersistenceConfig() {
+): PersistenceConfig() {
     override fun toString(): String {
         return "GcsConfig(bucket='$bucket', fileName='$fileName')"
     }

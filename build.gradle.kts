@@ -27,6 +27,7 @@ repositories {
 dependencies {
     implementation("com.typesafe:config:1.4.2")
     testImplementation(kotlin("test"))
+    testImplementation("org.amshove.kluent:kluent:1.72")
 }
 
 tasks.test {

@@ -1,4 +1,4 @@
-package org.tech20
+package org.tech20.aoc22
 
 import java.io.File
 
@@ -6,7 +6,7 @@ enum class Strategy{
     FIRST, SECOND
 }
 
-class RockPaperScissorsPlayer(val filePath:String, val strategy:Strategy = Strategy.FIRST){
+class RockPaperScissorsPlayer(val filePath:String, val strategy: Strategy = Strategy.FIRST){
     private val winningPairs = setOf(Pair("Rock", "Paper"), Pair("Paper", "Scissors"), Pair("Scissors", "Rock"))
     private val drawPairs = setOf(Pair("Rock", "Rock"), Pair("Paper", "Paper"), Pair("Scissors", "Scissors"))
     private val loosingPairs = setOf(Pair("Paper","Rock"), Pair("Scissors","Paper"), Pair("Rock","Scissors"))
